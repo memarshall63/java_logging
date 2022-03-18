@@ -1,11 +1,17 @@
-LOG:02/16/2022 20:59:41 [main] DEBUG Genlog - Invalid JSON Message Sent: Debugging Message
-LOG:02/16/2022 20:59:46 [main] ERROR Genlog - CAUGHT EXCEPTION:java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+LOG:03/18/2022 20:32:29 [main] ERROR Genlog - CAUGHT EXCEPTION:java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
 	at Genlog.main(Genlog_logback.java:65)
 
-LOG:02/16/2022 20:59:46 [main] DEBUG Genlog - Invalid JSON Message Sent: Debugging Message
-LOG:02/16/2022 20:59:49 [main] ERROR Genlog - Fatal Error Message - Action Required
-LOG:02/16/2022 20:59:49 [main] INFO  Genlog - Changed the Context GUID.
-LOG:02/16/2022 20:59:54 [main] ERROR Genlog - CAUGHT EXCEPTION:java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+LOG:03/18/2022 20:32:29 [main] WARN  Genlog - {"@ts":"2020-10-31T12:15:30.0123456Z", "msg":"Warning Message"}
+LOG:03/18/2022 20:32:33 [main] WARN  Genlog - {"@ts":"2020-10-31T12:15:30.0123456Z", "msg":"Warning Message"}
+LOG:03/18/2022 20:32:38 [main] DEBUG Genlog - Invalid JSON Message Sent: Debugging Message
+LOG:03/18/2022 20:32:42 [main] WARN  Genlog - {"@ts":"2020-10-31T12:15:30.0123456Z", "msg":"Warning Message"}
+LOG:03/18/2022 20:32:47 [main] ERROR Genlog - CAUGHT EXCEPTION:java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
 	at Genlog.main(Genlog_logback.java:65)
 
-LOG:02/16/2022 20:59:54 [main] ERROR Genlog - Error Message - Recovering
+LOG:03/18/2022 20:32:47 [main] ERROR Genlog - CAUGHT EXCEPTION:java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at Genlog.main(Genlog_logback.java:65)
+
+LOG:03/18/2022 20:32:47 [main] INFO  Genlog - Informational Message
+LOG:03/18/2022 20:32:51 [main] ERROR Genlog - Fatal Error Message - Action Required
+LOG:03/18/2022 20:32:51 [main] INFO  Genlog - Changed the Context GUID.
+LOG:03/18/2022 20:32:52 [main] INFO  Genlog - Informational Message
