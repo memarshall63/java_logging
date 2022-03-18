@@ -1,0 +1,4 @@
+2020-09-30 00:35:44.320 File:[main] INFO  splunklogger - logger level set to: INFO
+2020-09-30 00:35:44.325 File:[main] FATAL splunklogger - {"@ts":"2020-10-31T12:15:30.0123456Z","msg":"Fatal Error Message - Action Required"}
+2020-09-30 00:35:46.328 File:[main] ERROR splunklogger - {"@ts":"2020-10-31T12:15:30.0123456Z","msg":"Error Message - Recovering"}
+2020-09-30 00:35:47.329 File:[main] ERROR splunklogger - {"@ts":"2020-10-31T12:15:30.0123456Z","msg":"Error Message - Recovering"}

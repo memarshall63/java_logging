@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} Console:[%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <File name="MyFile" fileName="all.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} File:[%t] %-5level %logger{36} - %msg%n" />
+        </File>
+        <SplunkHttp name="httpconf"
+              url="https://10.0.2.4:8088"
+	      token="2cd18bfd-3656-4881-acc3-752a49257002"
+              disableCertificateValidation="true"
+	      index="log4j2"
+	      source="Genlog"
+	      sourcetype="msg_only"
+              >
+		<PatternLayout pattern="%m" />
+        </SplunkHttp>
+        <SplunkHttp name="httpconf2"
+              url="https://10.0.2.4:8088"
+	      token="2cd18bfd-3656-4881-acc3-752a49257002"
+              disableCertificateValidation="true"
+	      index="log4j2"
+	      source="Genlog"
+	      sourcetype="splunkjavalogger"
+              >
+		<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} splunkjavalogger:[%t] %-5level %logger{36} - %msg" />  
+        </SplunkHttp>
+        <SplunkHttp name="httpconf3"
+              url="https://10.0.2.4:8088"
+              token="2cd18bfd-3656-4881-acc3-752a49257002"
+              disableCertificateValidation="true"
+              index="log4j2"
+              source="Genlog"
+	      messageFormat="json"
+              sourcetype="json_msg_format"
+              >
+                <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} splunkjavalogger:[%t] %-5level %logger{36} - %msg" />
+        </SplunkHttp>
+        <SplunkHttp name="httpconf4"
+              url="https://10.0.2.4:8088"
+              token="2cd18bfd-3656-4881-acc3-752a49257002"
+              disableCertificateValidation="true"
+              index="log4j2"
+              source="Genlog"
+	      messageFormat="json"
+	      sourcetype="new_json"
+	      includeMarker="true"
+	      includeMDC="true"
+              >
+                <PatternLayout pattern="%m" />
+        </SplunkHttp>
+
+
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MyFile"/>
+        </Root>
+	<Logger name="splunklogger" level="info" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MyFile"/>
+<!--        <AppenderRef ref="httpconf"/>
+	    <AppenderRef ref="httpconf2"/>
+	    <AppenderRef ref="httpconf3"/>
+-->
+	    <AppenderRef ref="httpconf4"/>
+	</Logger>
+    </Loggers>
+</Configuration>
+

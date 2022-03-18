@@ -1,0 +1,6 @@
+2021-11-01 18:47:25.406 File:[main] INFO  splunklogger - logger level set to: INFO
+2021-11-01 18:47:25.409 File:[main] FATAL splunklogger - FATAL: I'm about to blow chunks Unable to invoke factory method in class com.splunk.logging.HttpEventCollectorLog4jAppender for element SplunkHttp: java.lang.NoClassDefFoundError: org/apache/http/HttpEntity java.lang.reflect.InvocationTargetException
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2021-11-01 18:47:27.411 File:[main] AUDIT splunklogger - AUDIT: This message must be written to the logs, no exceptions. It has a 100 Level - same level as FATAL
