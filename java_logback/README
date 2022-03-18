@@ -1,8 +1,0 @@
-This is an example of the use of Logback in a basic Java program.
-The program should be relatively self-contained and it was run on Ubuntu 18.04
-
-The program randomly prints around 50-100 messages with varying levels and contents.
-
-I use MDC to demonstrate establish a log "context".
-
-
