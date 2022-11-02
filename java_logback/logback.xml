@@ -6,7 +6,7 @@
             class="ch.qos.logback.core.ConsoleAppender">	
     <encoder>
       <pattern> 
-	      %d [%t] Context=%X{SESSION_ID} %-5p %logger{36} - %msg%n
+	      %d [%t] %-5p %logger{36}:%msg:[%X]%n
       </pattern>
     </encoder>
   </appender>
@@ -17,7 +17,7 @@
     <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <FileNamePattern>
-	      logs/logFile.%d{yyyy-MM-dd_HH-mm}.log.zip
+	      logs/logFile.%d{yyyy-MM-dd_HH}.log.zip
       </FileNamePattern>
     </rollingPolicy>
 
