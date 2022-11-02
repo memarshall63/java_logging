@@ -33,25 +33,29 @@ class Genlog
 			"FATAL"
 		};
 		String messages[] = {
-			"Debugging Message",
-			"Informational Message",
-			"{\"@ts\":\"2020-10-31T12:15:30.0123456Z\", \"msg\":\"Warning Message\"}",
-			"Error Message - Recovering",
-			"Fatal Error Message - Action Required"
+			"Debugging Message - The trace logic is debugging",
+			"Informational Message - an info message from sys",
+			"{\"@ts\":\"T12:15:30.012345Z\", \"msg\":\"Warning Msg\"}",
+			"Error Message - Recovering now tax serious issue",
+			"Fatal Error Msg- Action Required - please acknow"
 		};
 
 
 		String message;
+		/* build a structured json object */
 		JSONObject json = new JSONObject();
-		JSONObject jsonObj = new JSONObject();
-		json.put("test1", "value1");
+		JSONObject json_inner = new JSONObject();
+		json.put("json1", "value1");
+		json.put("json2", "value2");
+		json_inner.put("seq", "init");
+		json_inner.put("user", "marshall");
+		json.put("In", json_inner);
 
-		jsonObj.put("id", String.valueOf(java.util.UUID.randomUUID()));
-		jsonObj.put("user_name", "marshall");
-		json.put("invoice_id", jsonObj);
+		/* add some values to MDC */
+		MDC.put("JSON_Object", json.toString());
+		MDC.put("BigID","AbCdEfG1234567890");
+		MDC.put("KeyId", String.valueOf(java.util.UUID.randomUUID()));
 
-
-		MDC.put("SESSION_ID",json.toString());
 		int limit = getRandomInteger(50,100);
 		int level;
 		int isleep;
@@ -66,7 +70,7 @@ class Genlog
 			switch(level)
 				{
 				case 0:
-					logger.debug("Invalid JSON Message Sent: " + error_msg);
+					logger.debug(error_msg);
 					break;
 				case 1:
 					logger.info(error_msg);
@@ -79,8 +83,9 @@ class Genlog
 					break;
 				case 4:
 					logger.error(error_msg);
-					MDC.put("SESSION_ID",String.valueOf(java.util.UUID.randomUUID()));
-					logger.info("Changed the Context GUID.");
+					MDC.put("UUID",String.valueOf(java.util.UUID.randomUUID()));
+				/*	json.put("new_uuid", String.valueOf(java.util.UUID.randomUUID())); */
+					logger.info("as processing occurs weChanged the Context UUID.");
 					break;
 				default:
 					logger.error("DEFAULT: ("+level+") "+error_msg);
